@@ -54,5 +54,15 @@ public class CustomerManager {
     public Customer update(Customer customer) {
         return em.merge(customer);
     }
+
+    /**
+     * Récupère un Customer dans la base de données
+     *
+     * @param idCustomer
+     * @return
+     */
+    public Customer findById(int idCustomer) {
+        return em.find(Customer.class, idCustomer);
+    }
     
 }
