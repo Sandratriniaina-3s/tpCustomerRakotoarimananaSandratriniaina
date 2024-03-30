@@ -54,5 +54,25 @@ public class DiscountManager {
     public Discount findById(String code) {
         return em.find(Discount.class, code);
     }
+    
+    /**
+     * Récupère tous les Discounts dans la base de données triés par 'Rate' croissant
+     *
+     * @return La liste des Discounts triés par 'Rate' croissant
+     */
+    public List<Discount> getAllDiscountsInAscendingOrder() {
+        Query query = em.createNamedQuery("Discount.findAllAscendingOrdered");
+        return query.getResultList();
+    }
+    
+    /**
+     * Récupère tous les Discounts dans la base de données triés par 'Rate' décroissant
+     *
+     * @return La liste des Discounts triés par 'Rate' décroissant
+     */
+    public List<Discount> getAllDiscountsInDescendingOrder() {
+        Query query = em.createNamedQuery("Discount.findAllDescendingOrdered");
+        return query.getResultList();
+    }
 
 }

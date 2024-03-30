@@ -78,4 +78,12 @@ public class CustomerDetailsBean implements Serializable {
         return discountManager.getAllDiscounts();
     }
     
+    public List<Discount> getDiscountsInAscendingOrder() {
+        return discountManager.getAllDiscountsInAscendingOrder();
+    }
+    
+    public List<Discount> getDiscountsInDescendingOrder() {
+        return discountManager.getAllDiscountsInDescendingOrder();
+    }
+    
 }
